@@ -1,5 +1,5 @@
 # PyGPUFlux
-PyGPUFlux is an implementation of the OpenCL raytracing engine GPUFlux, using the PlantGL Librairy. Actually, it's still in progress.
+PyGPUFlux is an implementation of the OpenCL raytracing engine GPUFlux, using the PlantGL Library. Actually, it's still in progress.
 
 # Technologies used
 Python  
