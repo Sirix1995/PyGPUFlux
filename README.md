@@ -22,6 +22,7 @@ This implementation is made with several python scrips :
 **sensorSerializer.py :** same thing, but for sensor objects. Sensor are used to measure the irradiance of an area.  
 **bvhBuilder.py :** this class is made to build BVHs (bounding volume hierarchy structures) and serialize them. GPUFlux needs to BVHs : one for primitives and one for sensors.  
 **structfill.py :** a script used to fill NumPy arrays with some data.  
+**Kernel folder :** contains GPUFlux's OpenCL files.
 
 # What's working now and what's not.
 
