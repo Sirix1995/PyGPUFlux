@@ -15,9 +15,9 @@ def area(bbox):
     # Type check
     assert type(bbox) == openalea.plantgl.scenegraph._pglsg.BoundingBox, "Argument error : param is not a PlantGL bounding box."
 
-    dx = max(0, bbox.getXMax() - bbox.getXin())
-    dy = max(0, bbox.getYMax() - bbox.getYin())
-    dz = max(0, bbox.getZMax() - bbox.getZin())
+    dx = max(0, bbox.getXMax() - bbox.getXMin())
+    dy = max(0, bbox.getYMax() - bbox.getYMin())
+    dz = max(0, bbox.getZMax() - bbox.getZMin())
 
     return 2 * (dx * dy + dx * dz + dy * dz)
 
@@ -149,7 +149,7 @@ class Serializer():
          # Type check :
         assert type(scene) == openalea.plantgl.scenegraph._pglsg.Scene, "Error : input scene is not a PlantGL scene."
 
-        sceneInBytes, offsets = self.serializeTriangleSet(scene[0].geometry, 0, 0, 0.0)
+        sceneInBytes, offsets, sah = self.serializeTriangleSet(scene[0].geometry, 0, 0, 0.0)
         count = 1
         for shape in scene[1:]:
             tempSceneBytes, tempOffset, sah = self.serializeTriangleSet(shape.geometry, count, 0, 0.0)
@@ -302,6 +302,6 @@ class Serializer():
         print(resultat)
         print(resultat2)
 
-if __name__ == __main__:
+if __name__ == '__main__':
     serial = Serializer()
     serial.test()
